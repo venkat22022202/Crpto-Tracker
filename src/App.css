@@ -1,38 +1,70 @@
 .App {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+  background-color: #050505; /* Light background for better contrast */
+  border-radius: 10px; /* Soft rounded corners */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  color: #333;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  color: #0077ff; /* A vibrant, more engaging blue */
+  margin-bottom: 20px;
+  font-size: 2.5rem; /* Larger heading for emphasis */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+ul li {
+  background-color: #f9f9f9; /* A softer shade for list items */
+  margin: 10px 0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* More refined shadow */
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Smoother transition */
 }
 
-.App-link {
-  color: #61dafb;
+ul li:hover {
+  background-color: #e9eff5; /* Lighter on hover for an interactive feel */
+  transform: translateY(-3px); /* Less movement for subtlety */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Increased shadow on hover for depth */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+ul li p {
+  margin: 0;
+  font-weight: 600; /* Slightly bolder for readability */
+  color: #555; /* Darker text for contrast */
+}
+
+.loading {
+  font-size: 20px;
+  font-weight: bold;
+  color: #007bff; /* Match the loading text with the vibrant theme */
+}
+
+/* Enhancements for smaller screens */
+@media (max-width: 768px) {
+  .App {
+    padding: 10px; /* Reduce padding on smaller screens for more space */
   }
-  to {
-    transform: rotate(360deg);
+
+  h1 {
+    font-size: 2rem; /* Adjust heading size for smaller screens */
+  }
+
+  ul li {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px; /* Adjust padding for tighter look */
   }
 }
