@@ -19,3 +19,20 @@ export const fetchCryptos = async () => {
     return [];
   }
 };
+
+export const fetchCryptoHistory = async (id, days = 1, interval = 'hourly') => {
+  try {
+    const response = await axios.get(`${baseUrl}/coins/${id}/market_chart`, {
+      params: {
+        vs_currency: 'usd',
+        days: days,
+        interval: interval, // 'hourly' will give you data at least hourly, finer control may require additional logic
+      },
+    });
+    // Parse the response to extract the prices at required intervals here
+    return response.data.prices; // This returns a full array of price points, you'll need to process it
+  } catch (error) {
+    console.error(`Error fetching historical data for ${id}:`, error);
+    return [];
+  }
+};
